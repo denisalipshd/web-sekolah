@@ -143,6 +143,31 @@ li.nav-item.active a {
   width: 50%;
 }
 
+#hero-area {
+  position: relative;
+  width: 100%;
+  height: auto; /* Membuat tinggi otomatis berdasarkan aspek rasio */
+  overflow: hidden;
+}
+
+#hero-area img {
+  width: 100%; /* Gambar mengisi seluruh lebar kontainer */
+  height: auto;
+  display: block;
+}
+
+#hero-area .slider-item-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  text-align: center;
+  font-family: Raleway, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 50%;
+}
+
 #hero-area .slider-item-content h2 {
   font-size: 35px;
   font-weight: 400;
@@ -290,6 +315,23 @@ li.nav-item.active a {
   color: #666;
 }
 
+.vidio-wraper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Rasio aspek 16:9 untuk desktop */
+  height: 0;
+  overflow: hidden;
+}
+
+.vidio-wraper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* css umtuk tbl selngkapnya */
 section .btn.btn-more {
   margin: 20px 0 80px;
@@ -324,14 +366,41 @@ section .btn.btn-more {
   background-color: #fff;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 200px; /* Atur tinggi sesuai kebutuhan */
-  object-fit: cover; /* Memastikan gambar menutupi area dengan memotong jika perlu */
+.row .col-md-4 {
+  display: flex;
+  flex-wrap: wrap; /* Membolehkan card untuk membungkus ke baris berikutnya jika diperlukan */
+  justify-content: center;
+  gap: 20px;
 }
 
 .card {
-  margin-bottom: 30px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px; /* Jarak horizontal antara card */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 18rem;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+/* Kontainer card menggunakan Flexbox */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .tbl-guru {
@@ -436,4 +505,160 @@ section .btn.btn-more {
   text-align: center;
   background-color: rgb(5, 5, 5);
   padding: 25px 0;
+}
+
+/* media queris */
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+  #topbar {
+    display: none;
+  }
+
+  /* Adjust header and navigation */
+  .brand img {
+    width: 60px; /* Smaller logo */
+  }
+  .brand .brand-name h1 {
+    font-size: 20px; /* Smaller font size */
+  }
+  .brand .brand-name h3 {
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 12px; /* Smaller font for nav items */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  /* Make searchbox stack */
+  .searchbox-wrapper {
+    flex-direction: column;
+    margin-top: 20px; /* Stack search box and button */
+  }
+
+  /* Adjust hero slider text */
+  #hero-area .slider-item-content {
+    width: 80%; /* More space for content on smaller screens */
+    padding: 15px;
+  }
+  #hero-area .slider-item-content h2 {
+    font-size: 28px;
+  }
+  #hero-area .slider-item-content p {
+    font-size: 14px;
+  }
+
+  /* Adjust image section */
+  .container-gambar {
+    height: auto; /* Adjust height for better scaling */
+    padding: 20px; /* Add padding */
+  }
+  .gambar-img {
+    max-width: 100%; /* Ensure full width */
+  }
+
+  /* Sambutan section */
+  #sambutan h2,
+  #sambutan h3 {
+    font-size: 24px; /* Smaller heading for mobile */
+  }
+  #sambutan p {
+    font-size: 13px; /* Reduce font size */
+  }
+
+  .vidio-wraper {
+    padding-bottom: 75%; /* Mengubah rasio aspek agar lebih kecil di mobile */
+  }
+
+  .vidio-wraper iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .col-md-4 {
+    flex: 1 1 50%; /* Kartu akan menempati setengah dari lebar layar */
+  }
+
+  /* Grid layout adjustments */
+  .grid {
+    grid-template-columns: 1fr; /* Single column layout on mobile */
+    gap: 15px; /* Adjust gap */
+  }
+
+  /* Footer adjustments */
+  .footer .container {
+    flex-direction: column; /* Stack footer items */
+    padding: 20px; /* Adjust padding */
+  }
+  .footer iframe {
+    height: 200px; /* Smaller map on mobile */
+  }
+
+  /* Other general adjustments */
+  section .btn.btn-more {
+    font-size: 14px;
+    padding: 8px 30px;
+  }
+
+  /* Adjust card images */
+  .card-img-top {
+    height: 150px; /* Smaller card images */
+  }
+
+  /* Social media icons */
+  .icon-sosial-media a {
+    width: 40px; /* Smaller icons */
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* Media query for mobile phones (480px and below) */
+@media (max-width: 480px) {
+  /* Further adjust header */
+  .brand img {
+    width: 50px; /* Even smaller logo */
+  }
+  .brand .brand-name h1 {
+    font-size: 14px;
+  }
+  .brand .brand-name h3 {
+    font-size: 12px;
+  }
+
+  /* Smaller nav items */
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+
+  /* Adjust hero slider text further */
+  #hero-area .slider-item-content h2 {
+    font-size: 18px; /* Reduce hero text size further */
+  }
+
+  #hero-area .slider-item-content {
+    width: 99%; /* Lebih kecil lagi untuk layar sangat kecil */
+    padding: 10px;
+    height: auto;
+  }
+
+  .vidio-wraper iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Gambar section */
+  .container-gambar {
+    padding: 15px;
+  }
+
+  .col-md-4 {
+    flex: 1 1 100%; /* Kartu akan menempati seluruh lebar layar */
+  }
+
+  /* Footer */
+  .footer .container {
+    padding: 10px;
+  }
 }
