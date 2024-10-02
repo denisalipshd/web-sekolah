@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container-judul {
+    margin-top: 20px;
+}
+
+.judul h1 {
+    padding: 30px;
+    color: #fff;
+}

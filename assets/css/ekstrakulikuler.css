@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-ekstrakulikuler {
+  /* background-color: red; */
+  min-height: 100vh;
+  padding: 0 5%;
+  gap: 30px;
+}
+
+.container-judul {
+  margin-top: 20px;
+}
+
+.content-ekstrakulikuler {
+  /* background-color: blue; */
+  display: flex;
+  height: 380px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.content-ekstrakulikuler:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+.content-ekstrakulikuler .photo1 {
+  width: 50%;
+  object-fit: cover;
+}
+
+.description-ekstrakulikuler {
+  width: 50%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .container-ekstrakulikuler {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .description-ekstrakulikuler {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .photo1 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .description-ekstrakulikuler h1 {
+    font-size: 24px;
+  }
+
+  /* .content-ekstrakulikuler { */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* order: 2; */
+  /* } */
+
+  .description-ekstrakulikuler p {
+    font-size: 14px;
+  }
+
+  .photo1 {
+    height: 200px; /* Sesuaikan ukuran gambar agar tetap proporsional */
+  }
+}
